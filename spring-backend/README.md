@@ -25,14 +25,19 @@ This guide provides step-by-step instructions for setting up and running a Sprin
     ```bash
     sudo apt install maven
     ```
-
-4. **Build the project using Maven:**
+4. **Create Database Connection with backend:**
+   ```bash
+   vim /src/main/resources/application.properties
+   ```
+   Note: 1. add db-endpoint 2. username 3. password
+   
+5. **Build the project using Maven:**
 
     ```bash
     mvn clean package -Dmaven.test.skip=true
     ```
 
-5. **Run the application:**
+6. **Run the application:**
 
     ```bash
     java -jar target/spring-backend-v1.jar
