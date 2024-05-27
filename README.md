@@ -20,6 +20,7 @@ sudo systemctl enable mariadb
 ## Login Into Database
 ````
 sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db -pPasswd123$
+````
 ```sql
 CREATE DATABASE springbackend;
 
