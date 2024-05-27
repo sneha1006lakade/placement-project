@@ -58,6 +58,8 @@ aws s3 cp .  s3://angular-frontend-buck --recursive
 ![cloudfront-dis](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/b7734aee-4c8d-4cb7-a4a2-b2334399ddd8)
 
 
+
+
 ![Angular-cdn](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/aba82b3f-ca43-4a34-9a4e-89a4db42f7c2)
 
 # Angular Project Dockerization Guide
