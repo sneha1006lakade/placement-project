@@ -7,6 +7,7 @@ sudo apt install unzip -y
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+aws configure
 ````
 
 ## Step 1: Install Node.js and npm
@@ -37,12 +38,15 @@ ng build
 cd dist/angular-frontend
 ng serve --host 0.0.0.0 --port=80
 ```
-a4a2-b2334399ddd8)
+
 ![ng-serve-host](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/6e07ffc0-6c54-403c-9e86-62cd85f898fa)
+
 
 ## Step6: Go to browser and hit public-ip of frontend instance
 
+
 ![angular-ip](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/bac432e1-9f04-4b7d-81c9-8ed8e879793b)
+
 
 ## Step 5: Deploy the artifact to s3 bucket
 ````
@@ -52,6 +56,7 @@ aws s3 cp .  s3://angular-frontend-buck --recursive
 ## Step 6: Create Cloudfront Distribution
 
 ![cloudfront-dis](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/b7734aee-4c8d-4cb7-a4a2-b2334399ddd8)
+
 
 ![Angular-cdn](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/aba82b3f-ca43-4a34-9a4e-89a4db42f7c2)
 
