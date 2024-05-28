@@ -1,4 +1,4 @@
-# Angular Project Setup Guide
+## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Angular} \ \textbf{Frontend}}$# Angular Project Setup Guide
 
 This guide provides step-by-step instructions for setting up an Angular project from scratch on an Ubuntu machine.
 ### Install AWS CLI 
