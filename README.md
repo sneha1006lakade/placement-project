@@ -1,4 +1,4 @@
-# $${\color{red} \textbf{Project}: \textbf{Workers}  \ \textbf{App}}$$
+# $${\color{red} \textbf{Project}: \textbf{Angular}  \ \textbf{App}}$$
 
 ### Tech Stack
 - Frontend: Angular,Nodejs
