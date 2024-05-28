@@ -74,7 +74,9 @@ aws s3 cp .  s3://angular-frontend-buck --recursive
 ## Step 10: Create Hosted zone in route:53
 ![hosted zone](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/cc0abb81-4184-4dcd-b159-3b0e35f7a2d3)
 
-## Step 11: Change nameserer in hostiner
+## Step 11: Change nameserer in hostinger
+
+
 ## Step 12: Generate SSL certificate and create records in s3
 
 ![ssl](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/d31be2ab-1dfa-4d1a-949b-7aa2ca82c0e0)
