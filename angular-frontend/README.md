@@ -42,8 +42,8 @@ Note: add public-ip of backend server
 ```bash
 npm install
 ng build 
+sudo ng serve --host 0.0.0.0 --port=80
 cd dist/angular-frontend
-ng serve --host 0.0.0.0 --port=80
 ```
 
 ![ng-serve-host](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/6e07ffc0-6c54-403c-9e86-62cd85f898fa)
