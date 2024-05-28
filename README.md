@@ -11,7 +11,7 @@
 - step2: Set Up Backend
 - step3: Set UP Frontend
   
-### ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$
+## $${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$$
 
 ### Installing MariaDB, Setting Password, and Importing Database on Ubuntu Linux
 
