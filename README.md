@@ -1,17 +1,17 @@
 # $${\color{red} \textbf{Project}: \textbf{Workers}  \ \textbf{App}}$$
 
-## Tech Stack
+### Tech Stack
 - Frontend: Angular,Nodejs
 - Backend: Java-Springboot
 - Database: Mariadb
 - Cloud:AWS:ec2,s3,cloudfront,rds,route-53,certificate manager
-## Summary:
+### Summary:
 - Launch 3 ec2 instances for Frontend, Backend, and Database respectively
 - step1: Set Up Database Instance
 - step2: Set Up Backend
 - step3: Set UP Frontend
   
-## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$
+### ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$
 
 ### Installing MariaDB, Setting Password, and Importing Database on Ubuntu Linux
 
