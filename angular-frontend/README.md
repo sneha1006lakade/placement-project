@@ -35,6 +35,8 @@ ng version
 cd src/app/services
 sudo nano worker.service.ts
 ````
+Note: add public-ip of backend server
+
 ## Step 6: Install project dependencies (if needed)
 
 ```bash
