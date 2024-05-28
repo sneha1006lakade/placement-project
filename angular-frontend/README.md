@@ -30,7 +30,12 @@ sudo npm install -g @angular/cli@14.2.1
 ```bash
 ng version
 ```
-## Step 5: Install project dependencies (if needed)
+## Step 5: Connect to backend server
+````
+cd src/app/services
+sudo nano worker.service.ts
+````
+## Step 6: Install project dependencies (if needed)
 
 ```bash
 npm install
@@ -42,18 +47,18 @@ ng serve --host 0.0.0.0 --port=80
 ![ng-serve-host](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/6e07ffc0-6c54-403c-9e86-62cd85f898fa)
 
 
-## Step6: Go to browser and hit public-ip of frontend instance
+## Step7: Go to browser and hit public-ip of frontend instance
 
 
 ![angular-ip](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/bac432e1-9f04-4b7d-81c9-8ed8e879793b)
 
 
-## Step 5: Deploy the artifact to s3 bucket
+## Step 8: Deploy the artifact to s3 bucket
 ````
 aws s3 mb s3://angular-frontend-app-buck
 aws s3 cp .  s3://angular-frontend-buck --recursive
 ````
-## Step 6: Create Cloudfront Distribution
+## Step 9: Create Cloudfront Distribution
 
 ![cloudfront-dis](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/b7734aee-4c8d-4cb7-a4a2-b2334399ddd8)
 
