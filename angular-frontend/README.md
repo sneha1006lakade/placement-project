@@ -1,4 +1,4 @@
-## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Angular} \ \textbf{Frontend}}$# Angular Project Setup Guide
+## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Angular} \ \textbf{Frontend}}$$
 
 This guide provides step-by-step instructions for setting up an Angular project from scratch on an Ubuntu machine.
 ### Install AWS CLI 
@@ -68,6 +68,24 @@ aws s3 cp .  s3://angular-frontend-buck --recursive
 
 
 ![Angular-cdn](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/aba82b3f-ca43-4a34-9a4e-89a4db42f7c2)
+
+## Step 10: Create Hosted zone in route:53
+![hosted zone](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/cc0abb81-4184-4dcd-b159-3b0e35f7a2d3)
+
+## Step 11: Change nameserer in hostiner
+## Step 12: Generate SSL certificate and create records in s3
+
+![ssl](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/d31be2ab-1dfa-4d1a-949b-7aa2ca82c0e0)
+
+## Step 13: Attach SSL to cloudfront distribution
+
+## Step 14: Create A record in RT-53 and add cloufront distribution
+
+![a-record](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/fc902838-ad31-487c-a92d-51316ccd4648)
+
+## Step 15: Final Result
+
+![domain-frontend](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/083c3e34-543b-4a9e-a40a-bb06b1beea2a)
 
 # Angular Project Dockerization Guide
 
