@@ -1,4 +1,4 @@
-### ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Backend}}$
+## $${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Backend}}$$
 
 This guide provides step-by-step instructions for setting up and running a Spring backend application on Ubuntu.
 
