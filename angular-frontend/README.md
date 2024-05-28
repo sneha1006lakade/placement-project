@@ -1,4 +1,4 @@
-## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Angular} \ \textbf{Frontend}}$$
+## $${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Angular} \ \textbf{Frontend}}$$
 
 This guide provides step-by-step instructions for setting up an Angular project from scratch on an Ubuntu machine.
 ### Install AWS CLI 
