@@ -1,28 +1,25 @@
 # $${\color{red} \textbf{Project}: \textbf{Workers}  \ \textbf{App}}$$
 
-# Tech Stack
+## Tech Stack
 - Frontend: Angular,Nodejs
 - Backend: Java-Springboot
 - Database: Mariadb
 - Cloud:AWS:ec2,s3,cloudfront,rds,route-53,certificate manager
-# Summary:
+## Summary:
 - Launch 3 ec2 instances for Frontend, Backend, and Database respectively
 - step1: Set Up Database Instance
 - step2: Set Up Backend
 - step3: Set UP Frontend
   
-# ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$
+## ${\color{blue} \textbf{Set} \textbf{Up}  \ \textbf{Database}}$
 
-# Installing MariaDB, Setting Password, and Importing Database on Ubuntu Linux
+### Installing MariaDB, Setting Password, and Importing Database on Ubuntu Linux
 
-This guide will walk you through the process of installing MariaDB on Ubuntu Linux, setting a password, and importing a database from a SQL file. MariaDB is a popular open-source relational database management system, and it's commonly used in web development environments.
-##  Create database in instance
+
+###  ${\color{blue} \textbf{Create } \textbf{RDS}  \ \textbf{Instance}}$
 
 ![db](https://github.com/abhipraydhoble/Project-Angular-App/assets/122669982/8d992b33-4a08-4a68-95ab-1021c1111791)
 
-## Setup MariaDB and Import MySQL
-
-Before installing any new software, it's essential to update the package lists to ensure you're getting the latest versions available.
 
 ```bash
 sudo apt update
@@ -32,7 +29,7 @@ sudo systemctl enable mariadb
 
 
 ```
-## Login Into Database
+### ${\color{green} \textbf{Login } \textbf{Into}  \ \textbf{Database}}$
 ````
 sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db -pPasswd123$
 ````
@@ -41,7 +38,7 @@ CREATE DATABASE springbackend;
 
 ```
 
-### Import Database from SQL File
+### ${\color{green} \textbf{Import} \textbf{ Database}  \ \textbf{From} \textbf{ SQL} \textbf{ File}}$
 ```bash
 sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db -pPasswd123$ springbackend < springbackend.sql
 ```
