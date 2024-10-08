@@ -37,6 +37,10 @@ sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db 
 CREATE DATABASE springbackend;
 
 ```
+````
+exit
+````
+#### clone git repository and restore db 
 
 ### ${\color{green} \textbf{Import} \textbf{ Database}  \ \textbf{From} \textbf{ SQL} \textbf{ File}}$
 ```bash
