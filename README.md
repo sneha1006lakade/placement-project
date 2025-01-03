@@ -44,10 +44,10 @@ exit
 
 ### ${\color{green} \textbf{Import} \textbf{ Database}  \ \textbf{From} \textbf{ SQL} \textbf{ File}}$
 ```bash
-sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db -pPasswd123$ springbackend < springbackend.sql
+sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u admin -pAdmin123 springbackend < springbackend.sql
 ```
 ```bash
-sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u Angular-db -pPasswd123$
+sudo mysql -h database-1.cxqukacgq5pj.us-east-1.rds.amazonaws.com -u admin -pAdmin123
 ```
 ```sql
 show databases;
