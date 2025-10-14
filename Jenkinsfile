@@ -75,7 +75,7 @@ pipeline {
 
         stage('Deploy Backend to EKS') {
             steps {
-                 withAWS(credentials: 'aws-creds', region: 'us-east-1') {
+                 withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                   sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
                     
@@ -88,7 +88,7 @@ pipeline {
 
         stage('Deploy Frontend to EKS') {
             steps {
-                 withAWS(credentials: 'aws-creds', region: 'us-east-1') {
+                 withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                   sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
 
