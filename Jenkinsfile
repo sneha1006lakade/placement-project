@@ -132,7 +132,7 @@ pipeline {
            emailext(
                subject: "SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                body: "Pipeline succeeded.\nCheck details: ${env.BUILD_URL}",
-               to: "$EMAIL_RECIPIENTS"
+               to: EMAIL_RECIPIENTS
            )
        }
 
@@ -141,7 +141,7 @@ pipeline {
            emailext(
                subject: "FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                body: "Pipeline failed.\nCheck details: ${env.BUILD_URL}",
-               to: "$EMAIL_RECIPIENTS"
+               to: EMAIL_RECIPIENTS
            )
        }
     }
