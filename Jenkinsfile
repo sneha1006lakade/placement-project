@@ -20,7 +20,7 @@ pipeline {
         
         stage('Maven Build & Test') {
             steps {
-                sh '''cd backend
+                sh '''cd spring-backend
                       rm -rf target
                       mvn clean install -DskipTests  '''
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('test') {
             steps {
                withSonarQubeEnv('sonarQube') { 
-                    sh '''cd backend
+                    sh '''cd spring-backend
                        mvn sonar:sonar -Dsonar.projectKey=placement-project  -Dsonar.projectName=placement-project -Dsonar.login=${SONAR_AUTH_TOKEN}\'\'
                '''
                 }
