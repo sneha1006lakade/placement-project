@@ -61,7 +61,7 @@ Components created by terraform script:
  - Internet Gateway & NAT Gateway
  - EKS Cluster + Node Group
  - S3 & DynamoDB for remote backend
- - Internet Gateway & NAT Gateway
+ - Route tables
 ---
 
 - Terrafrom Structure 
