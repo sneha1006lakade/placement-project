@@ -38,3 +38,5 @@ spec:
                   key: db-password
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: "update"
+      imagePullSecrets:  
+        - name: regcred
