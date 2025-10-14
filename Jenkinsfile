@@ -3,8 +3,6 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        echo $DOCKERHUB_USR       
-        echo $DOCKERHUB_PSW
         BACKEND_IMAGE = "1006sneha/backend-app:latest"
         FRONTEND_IMAGE = "1006sneha/frontend-app:latest"
 
