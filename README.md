@@ -299,23 +299,7 @@ Let’s now set up **Terraform backend** — this ensures infrastructure state (
 - **S3 bucket** → stores Terraform state file
 - **DynamoDB table** → used for Terraform state locking (prevents parallel edits)
 ---
-## 🗂️ Folder placement
-
-We’ll add a new folder:
-
-```
-aws-deployment/
-└── terraform/
-    ├── backend/
-    │   ├── main.tf
-    │   ├── variables.tf
-    │   └── outputs.tf
-    ├── network/
-    └── main.tf
-
-```
----
-## 📄 `backend/main.tf`
+### 📄 `backend/main.tf`
 This will **create the S3 bucket + DynamoDB table** to store state.
 
 ```hcl
@@ -363,7 +347,7 @@ resource "aws_dynamodb_table" "tf_lock" {
 ```
 ---
 
-## 📄 `backend/variables.tf`
+### 📄 `backend/variables.tf`
 
 ```hcl
 variable "aws_region" {
@@ -384,7 +368,7 @@ variable "table_name" {
 ```
 ---
 
-## 📄 `backend/outputs.tf`
+### 📄 `backend/outputs.tf`
 
 ```hcl
 output "bucket_name" {
@@ -395,7 +379,7 @@ output "dynamodb_table" {
   value = aws_dynamodb_table.tf_lock.name
 }
 ```
-## Steps to apply backend
+### Steps to apply backend
 
 1. Go into the backend folder:
     
@@ -417,7 +401,7 @@ output "dynamodb_table" {
     terraform apply
     
     ```
-## ⚙️ Then configure main Terraform backend
+### ⚙️ Then configure main Terraform backend
 
 In root `aws-deployment/terraform/main.tf`,
 
