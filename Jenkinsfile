@@ -9,7 +9,7 @@ pipeline {
         AWS_REGION = "us-east-1"
         EKS_CLUSTER = "app-eks-cluster"
 
-        EMAIL_RECIPIENTS = credentials('email-recipients')
+        EMAIL_RECIPIENTS = 'sneha.lakade.456@gmail.com'
     }
 
     stages {
@@ -127,22 +127,34 @@ pipeline {
     }
 
     post {
-       success {
-           echo 'Pipeline completed successfully!'
-           emailext(
-               subject: "SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-               body: "Pipeline succeeded.\nCheck details: ${env.BUILD_URL}",
-               to: EMAIL_RECIPIENTS
-           )
-       }
+        success {
+            echo '✅ Pipeline succeeded!'
+            mail(
+                to: EMAIL_RECIPIENTS,
+                subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """Hello Team,
 
-       failure {
-           echo 'Pipeline failed. Check logs for details.'
-           emailext(
-               subject: "FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-               body: "Pipeline failed.\nCheck details: ${env.BUILD_URL}",
-               to: EMAIL_RECIPIENTS
-           )
-       }
+The Jenkins build *${env.JOB_NAME}* #${env.BUILD_NUMBER} succeeded.
+
+Check details: ${env.BUILD_URL}
+
+— Jenkins"""
+            )
+        }
+
+        failure {
+            echo '❌ Pipeline failed!'
+            mail(
+                to: EMAIL_RECIPIENTS,
+                subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """Hello Team,
+
+The Jenkins build *${env.JOB_NAME}* #${env.BUILD_NUMBER} failed.
+
+Check details: ${env.BUILD_URL}
+
+— Jenkins"""
+            )
+        }
     }
 }
