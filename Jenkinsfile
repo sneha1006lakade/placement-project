@@ -23,7 +23,6 @@ pipeline {
                 sh '''cd backend
                       rm -rf target
                       mvn clean install -DskipTests  '''
-                }
             }
         }
         
