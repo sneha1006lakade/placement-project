@@ -55,28 +55,36 @@ sudo apt update && sudo apt install terraform
 // Configure AWS
 aws configure
   ```
-
-- Components created by terraform script:
+---
+Components created by terraform script:
  - VPC, Public & Private Subnets
  - Internet Gateway & NAT Gateway
  - EKS Cluster + Node Group
  - S3 & DynamoDB for remote backend
  - Internet Gateway & NAT Gateway
+---
 
-- Terrafrom Structure
+- Terrafrom Structure 
 ```bash
 Placement-project/
 ├── terraform/
 │   ├── main.tf
 │   ├── variables.tf
 │   ├── outputs.tf
-│   └── network/
-│       ├── vpc.tf
-│       ├── nat.tf
-│       ├── route_tables.tf
-│       ├── variables.tf
-│       └── outputs.tf
-
+│   |── network/
+│   |   ├── vpc.tf
+│   |   ├── nat.tf
+│   |   ├── route_tables.tf
+│   |   ├── variables.tf
+│   |   └── outputs.tf
+|   ├── backend/
+|   │   ├── main.tf
+|   │   ├── variables.tf
+|   │   └── outputs.tf
+|   ├── eks/
+|   |   ├── main.tf
+|   │   ├── variables.tf
+|   │   └── outputs.tf
 ```
 ---
 - network/vpc.tf
