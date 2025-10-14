@@ -57,11 +57,11 @@ aws configure
   ```
 
 - Components created by terraform script:
-  1. VPC, Public & Private Subnets
-  2. Internet Gateway & NAT Gateway
-  3. EKS Cluster + Node Group
-  4. S3 & DynamoDB for remote backend
-  5. Internet Gateway & NAT Gateway
+ - VPC, Public & Private Subnets
+ - Internet Gateway & NAT Gateway
+ - EKS Cluster + Node Group
+ - S3 & DynamoDB for remote backend
+ - Internet Gateway & NAT Gateway
 
 - Terrafrom Structure
 ```bash
@@ -218,8 +218,8 @@ output "private_subnet_ids" {
 This version creates:
 
 - 1 VPC
-- 1 Public yy
-- 1 Private Subnet
+- 2 Public subnet 
+- 2 Private Subnet
 - 1 IGW
 - 1 NAT Gateway
 - Proper route tables
@@ -288,10 +288,8 @@ Let’s now set up **Terraform backend** — this ensures infrastructure state (
 
 ## What we’ll create:
 
-1. **S3 bucket** → stores Terraform state file
-2. **DynamoDB table** → used for Terraform state locking (prevents parallel edits)
-3. Small local Terraform file to configure backend
-
+- **S3 bucket** → stores Terraform state file
+- **DynamoDB table** → used for Terraform state locking (prevents parallel edits)
 ---
 ## 🗂️ Folder placement
 
@@ -673,7 +671,7 @@ aws eks update-kubeconfig --region us-east-1 --name app-eks-cluster
 - **Subnets** → choose **private subnets**
 - **Public access** → ❌ *No (keep it private)*
 - **VPC Security group** → create or select one that:
-    - Allows inbound port **3306** from your **EKS worker node security group**
+-  - Allows inbound port **3306** from your **EKS worker node security group**
 ---
 
 ### Wait for DB to be in “Available” state
