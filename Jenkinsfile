@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        BACKEND_IMAGE = "1006sneha/backend:latest"
-        FRONTEND_IMAGE = "1006sneha/frontend:latest"
+        BACKEND_IMAGE = "1006sneha/backend-app:latest"
+        FRONTEND_IMAGE = "1006sneha/frontend-app:latest"
 
         AWS_REGION = "us-east-1"
         EKS_CLUSTER = "app-eks-cluster"
