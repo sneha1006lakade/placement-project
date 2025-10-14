@@ -8,8 +8,6 @@ pipeline {
 
         AWS_REGION = "us-east-1"
         EKS_CLUSTER = "app-eks-cluster"
-
-        EMAIL_RECIPIENTS = 'sneha.lakade.456@gmail.com'
     }
 
     stages {
@@ -128,33 +126,14 @@ pipeline {
 
     post {
         success {
-            echo '✅ Pipeline succeeded!'
-            mail(
-                to: EMAIL_RECIPIENTS,
-                subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """Hello Team,
-
-The Jenkins build *${env.JOB_NAME}* #${env.BUILD_NUMBER} succeeded.
-
-Check details: ${env.BUILD_URL}
-
-— Jenkins"""
-            )
+              mail to: 'team@example.com',
+                  subject: "Build Successful",
+                  body: "Your build completed successfully."
         }
-
         failure {
-            echo '❌ Pipeline failed!'
-            mail(
-                to: EMAIL_RECIPIENTS,
-                subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """Hello Team,
-
-The Jenkins build *${env.JOB_NAME}* #${env.BUILD_NUMBER} failed.
-
-Check details: ${env.BUILD_URL}
-
-— Jenkins"""
-            )
+              mail to: 'team@example.com',
+                  subject: "Build Failed",
+                 body: "Build failed. Please check logs."
         }
     }
 }
