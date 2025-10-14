@@ -778,7 +778,7 @@ http://<EC2-1-Public-IP>:9000
  - Go to Administration —> configuration —> webhook —> enter name, <jenkins_url>/<sonarqube-webhook> —> create
 ---
  - Add environment of sonarqube server in jenkins system
-   settings —> system —> sonarqube server —> check the box of Environment variables —> enter name, <Url of server > —> select generated token —> save
+   - settings —> system —> sonarqube server —> check the box of Environment variables —> enter name, <Url of server> —> select generated token —> save
 ---
 
 - Now write a  **`Jenkinsfile`** and save this file as in repo root.
