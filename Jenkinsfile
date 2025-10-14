@@ -73,6 +73,19 @@ pipeline {
             }
         }
 
+        stage('Apply Kubernetes Configs & Secrets') {
+            steps {
+                 withAWS(credentials: 'aws-credentials', region: "${AWS_REGION}") {
+                  sh """
+                    aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
+
+                    kubectl apply -f k8s/backend-secret.yaml
+                    kubectl apply -f k8s/frontend-configmap.yaml
+                 """
+                 }
+            }
+        }
+
         stage('Deploy Backend to EKS') {
             steps {
                  withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
