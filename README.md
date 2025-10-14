@@ -663,7 +663,7 @@ aws eks update-kubeconfig --region us-east-1 --name app-eks-cluster
 - **Subnets** → choose **private subnets**
 - **Public access** → ❌ *No (keep it private)*
 - **VPC Security group** → create or select one that:
--  - Allows inbound port **3306** from your **EKS worker node security group**
+  - Allows inbound port **3306** from **EKS worker node security group**
 ---
 
 ### Wait for DB to be in “Available” state
@@ -677,7 +677,7 @@ Once it’s up:
 ### ✅ Next after that:
 
 Once RDS is created and reachable, we’ll use the database:-
-```json
+```bash
 apt install mysql-client
 
 mysql -h app-db.c4bmesy0ehmh.us-east-1.rds.amazonaws.com -u admin -p
@@ -742,7 +742,7 @@ sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 ```
 - Jenkins will be accessible at :—
-```json
+```bash
 http://<EC2-1-Public-IP>:8080
 ```
 - Jenkins plugins:
@@ -764,11 +764,12 @@ http://<EC2-1-Public-IP>:8080
 ```bash
 docker run -d --name sonarqube-custom -p 9000:9000 sonarqube:10.6-community
 ```
-- Sonarqube accessible at:
 
+- Sonarqube accessible at:
 ```
 http://<EC2-1-Public-IP>:9000
 ```
+
 - **Create Project in SonarQube UI**
  - Go to **Projects → Create Project → Manually**.
  - Enter project key.
@@ -777,8 +778,7 @@ http://<EC2-1-Public-IP>:9000
  - Go to Administration —> configuration —> webhook —> enter name, <jenkins_url>/<sonarqube-webhook> —> create
 ---
  - Add environment of sonarqube server in jenkins system
-
-settings —> system —> sonarqube server —> check the box of Environment variables —> enter name, <Url of server > —> select generated token —> save
+   settings —> system —> sonarqube server —> check the box of Environment variables —> enter name, <Url of server > —> select generated token —> save
 ---
 
 - Now write a  **`Jenkinsfile`** and save this file as in repo root.
