@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        echo $DOCKERHUB_USR       
+        echo $DOCKERHUB_PSW
         BACKEND_IMAGE = "1006sneha/backend-app:latest"
         FRONTEND_IMAGE = "1006sneha/frontend-app:latest"
 
@@ -78,6 +80,11 @@ pipeline {
                  withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                   sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
+
+                    kubectl get secret regcred || kubectl create secret docker-registry regcred \
+                       --docker-server=https://index.docker.io/v1/ \
+                       --docker-username=$DOCKERHUB_USR \
+                       --docker-password=$DOCKERHUB_PSW
                     
                     kubectl apply -f k8s/backend-deployment.yaml
                     kubectl apply -f k8s/backend-service.yaml
@@ -91,6 +98,11 @@ pipeline {
                  withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                   sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
+
+                    kubectl get secret regcred || kubectl create secret docker-registry regcred \
+                       --docker-server=https://index.docker.io/v1/ \
+                       --docker-username=$DOCKERHUB_USR \
+                       --docker-password=$DOCKERHUB_PSW
 
                     kubectl apply -f k8s/frontend-deployment.yaml
                     kubectl apply -f k8s/frontend-service.yaml
