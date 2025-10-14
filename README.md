@@ -405,7 +405,7 @@ output "dynamodb_table" {
 
 In root `aws-deployment/terraform/main.tf`,
 
-add this **inside the `terraform {}` block** (replace bucket/table names accordingly):
+add this **inside the `terraform {}` block**:
 
 ```hcl
 terraform {
