@@ -75,24 +75,28 @@ pipeline {
 
         stage('Deploy Backend to EKS') {
             steps {
-                sh """
+                 withAWS(credentials: 'aws-creds', region: 'us-east-1') {
+                  sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
                     
                     kubectl apply -f k8s/backend-deployment.yaml
                     kubectl apply -f k8s/backend-service.yaml
                 """
+                }  
             }
         }
 
         stage('Deploy Frontend to EKS') {
             steps {
-                sh """
+                 withAWS(credentials: 'aws-creds', region: 'us-east-1') {
+                  sh """
                     aws eks update-kubeconfig --name ${EKS_CLUSTER} --region ${AWS_REGION}
 
                     kubectl apply -f k8s/frontend-deployment.yaml
                     kubectl apply -f k8s/frontend-service.yaml
                     kubectl apply -f k8s/ingress.yaml
                 """
+                }  
             }
         }
     }
