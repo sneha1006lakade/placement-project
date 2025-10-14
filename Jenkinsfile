@@ -81,8 +81,8 @@ pipeline {
 
                     kubectl get secret regcred || kubectl create secret docker-registry regcred \
                        --docker-server=https://index.docker.io/v1/ \
-                       --docker-username=$DOCKERHUB_USR \
-                       --docker-password=$DOCKERHUB_PSW
+                       --docker-username=$DOCKERHUB_CREDENTIALS_USR \
+                       --docker-password=$DOCKERHUB_CREDENTIALS_PSW
                     
                     kubectl apply -f k8s/backend-deployment.yaml
                     kubectl apply -f k8s/backend-service.yaml
@@ -99,8 +99,8 @@ pipeline {
 
                     kubectl get secret regcred || kubectl create secret docker-registry regcred \
                        --docker-server=https://index.docker.io/v1/ \
-                       --docker-username=$DOCKERHUB_USR \
-                       --docker-password=$DOCKERHUB_PSW
+                       --docker-username=$DOCKERHUB_CREDENTIALS_USR \
+                       --docker-password=$DOCKERHUB_CREDENTIALS_PSW
 
                     kubectl apply -f k8s/frontend-deployment.yaml
                     kubectl apply -f k8s/frontend-service.yaml
