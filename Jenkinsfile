@@ -8,6 +8,8 @@ pipeline {
 
         AWS_REGION = "us-east-1"
         EKS_CLUSTER = "app-eks-cluster"
+
+        EMAIL_RECIPIENTS = credentials('email-recipients')
     }
 
     stages {
@@ -129,7 +131,8 @@ pipeline {
            echo 'Pipeline completed successfully!'
            emailext(
                subject: "SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-               body: "Pipeline succeeded.\nCheck details: ${env.BUILD_URL}"
+               body: "Pipeline succeeded.\nCheck details: ${env.BUILD_URL}",
+               to: "${EMAIL_RECIPIENTS}"
            )
        }
 
@@ -137,7 +140,8 @@ pipeline {
            echo 'Pipeline failed. Check logs for details.'
            emailext(
                subject: "FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-               body: "Pipeline failed.\nCheck details: ${env.BUILD_URL}"
+               body: "Pipeline failed.\nCheck details: ${env.BUILD_URL}",
+               to: "${EMAIL_RECIPIENTS}"
            )
        }
     }
