@@ -6,7 +6,6 @@ pipeline {
         BACKEND_IMAGE = "1006sneha/backend:latest"
         FRONTEND_IMAGE = "1006sneha/frontend:latest"
 
-        # AWS/EKS info
         AWS_REGION = "us-east-1"
         EKS_CLUSTER = "app-eks-cluster"
     }
