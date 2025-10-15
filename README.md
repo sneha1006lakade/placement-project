@@ -703,13 +703,12 @@ SELECT * FROM tbl_workers;
 
 ```
 ---
-update frontend/.env
-```
-.env
-```
-in frontend build to use
-```
-VITE_API_URL="http://backend-service:8085/api"
+- Update frontend/src/environments/environment.prod.ts:
+```bash
+export const environment = {
+  production: true,
+  apiUrl: '/api'
+};
 ```
 ---
 
